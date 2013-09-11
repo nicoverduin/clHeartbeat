@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Clheartbeat : Class for creating Fading LEDS (on PWM pin) and flashing Leds (on all digital pins)" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Clheartbeat</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nicoverduin/clHeartbeat">View on GitHub</a>
+
+          <h1 id="project_title">Clheartbeat</h1>
+          <h2 id="project_tagline">Class for creating Fading LEDS (on PWM pin) and flashing Leds (on all digital pins)</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nicoverduin/clHeartbeat/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nicoverduin/clHeartbeat/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="clheartbeat" class="anchor" href="#clheartbeat"><span class="octicon octicon-link"></span></a>clHeartbeat</h3>
+
+<p>Class for creating Fading LEDS (on PWM pin) and flashing Leds (on all digital pins).</p>
+
+<h1>
+<a name="constructors" class="anchor" href="#constructors"><span class="octicon octicon-link"></span></a>Constructors:</h1>
+
+<pre><code>clHeartbeat(unsigned int pin, unsigned long halfDuration, uint8_ t flash);
+clHeartbeat(unsigned int pin, byte * fadeArray, unsigned int arraySize, unsigned long halfDuration); 
+clHeartbeat (uint8_t pin, unsigned long halfDuration); 
+</code></pre>
+
+<h1>
+<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters</h1>
+
+<ul>
+<li>pin = pin number where the PWM signal is to be sent to. REMEMBER the FADING willonly work on a PWM pin.</li>
+<li>halfDuration  = Duration of one sequence going through fadeArray (you need 2 for up and down)<br>
+</li>
+<li>flash = if 1 will start flashing </li>
+<li>fadeArray = Array to series of Bytes with the PWM values to be sent to the LED. Default the class has a builtin version</li>
+<li>arraySize = number of entries in fadeArray handed over to the class</li>
+</ul><h1>
+<a name="methods" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h1>
+
+<ul>
+<li>Update() = Call this once in the loop to update the flashers and leds. Do this for every instance of clHeartbeat</li>
+<li>Start() = start the Fader or Flasher </li>
+<li>Stop() = Stops the Fader or Flasher</li>
+<li>ChangeDuration(unsigned long halfDuration) = Changes the duration of the fading cycle </li>
+<li>ChangeOutputPin(unsigned int pin) = Lets the Fader continue on another pin</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Clheartbeat maintained by <a href="https://github.com/nicoverduin">nicoverduin</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
